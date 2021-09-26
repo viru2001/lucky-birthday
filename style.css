@@ -13,7 +13,8 @@ a {
 :root {
   --primary-color: #6d28d9;
   --white: #fff;
-  --red: #ef4444;
+  --green : rgb(50, 205, 50);
+  --red: rgb(239, 68, 68);
   --black: #000;
 }
 

@@ -5,6 +5,7 @@ const luckyNo = document.querySelector("#lucky-number");
 const checkBtn = document.querySelector("#check-btn");
 const errorMsg = document.querySelector("#error-message");
 const outputDiv = document.querySelector(".output");
+const card = document.querySelector(".card");
 
 closeBtn.addEventListener("click", () => {
   privacyNote.style.display = "none";
@@ -19,6 +20,12 @@ const resetErrorMsg = ()=>{
     errorMsg.innerText = "";
 }
 
+const removeOutput = ()=>{
+    outputDiv.innerHTML = "";
+    card.style.backgroundColor = "#fff";
+}
+dob.addEventListener('click',removeOutput);
+luckyNo.addEventListener('click',removeOutput);
 const checkValidInput = (date,number)=>{
     if(date && number){
 
@@ -48,10 +55,13 @@ const checkLucky = (sum,number) =>{
 
 const setOutput = (isLucky)=>{
     if(isLucky){
-        outputDiv.innerHTML = " <img src='images/lucky.svg'/><p>Your Birthday is Lucky !!! </p>";
+        outputDiv.innerHTML = " <img src='images/lucky.svg'/><p>Your Birthday is Lucky :) </p>";
+        card.style.backgroundColor = "rgb(50, 205, 50)";
     }
     else{
-        outputDiv.innerHTML = " <img src='images/unlucky.svg'/><p>Your Birthday is Unlucky !!! </p>";
+        outputDiv.innerHTML = " <img src='images/unlucky.svg'/><p>Your Birthday is Unlucky :( </p>";
+        card.style.backgroundColor = "rgb(239, 68, 68)";
+
     }
 }
 
